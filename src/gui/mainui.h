@@ -3,6 +3,7 @@
 
 #include <QtWidgets/QWidget>
 
+#include "util/titlebar.h"
 // test
 #include <QtGui/QMouseEvent>
 #include "gui/picgraphicsview.h"
@@ -24,7 +25,6 @@ protected:
 
 private:
     Ui::MainUi *ui;
-
 
     QRectF m_picRect;
 };

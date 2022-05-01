@@ -15,6 +15,31 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
+    <widget class="TitleBar" name="titleBar">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="PicGraphicsView" name="MainPicView">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -34,6 +59,12 @@
    <class>PicGraphicsView</class>
    <extends>QGraphicsView</extends>
    <header location="global">gui/picgraphicsview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>TitleBar</class>
+   <extends>QGroupBox</extends>
+   <header location="global">util/titlebar.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>

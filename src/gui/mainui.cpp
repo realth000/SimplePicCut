@@ -10,10 +10,20 @@
 
 #define USE_BORDER
 MainUi::MainUi(QWidget *parent)
-    : QWidget(parent)
-      , ui(new Ui::MainUi)
+    : QWidget(parent),
+      ui(new Ui::MainUi)
 {
     ui->setupUi(this);
+    this->setFixedSize(800,400);
+    this->setWindowFlags(Qt::FramelessWindowHint);
+    ui->titleBar->setFixedWidth(this->width());
+    ui->titleBar->setCloseIcon(":/pic/close.png");
+    ui->titleBar->setMinIcon(":/pic/minimize.png");
+    ui->titleBar->setTitle(":/pic/minimize.png");
+    ui->titleBar->setUseGradient(true);
+    ui->titleBar->setTitleIcon(":/pic/minimize.png");
+    ui->titleBar->initUi(TitleBarMode::DefaultStyle, "rgb(240,255,255)", "rgb(93,94,95)",
+                          "qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgb(18,18,18), stop: 1 rgb(21,21,21))", "rgb(240,255,255)");
 #ifdef USE_BORDER
     ui->verticalLayout->setContentsMargins(10,10,10,10);
 #else
@@ -46,6 +56,7 @@ MainUi::~MainUi()
 
 void MainUi::resizeEvent(QResizeEvent *event)
 {
+    ui->titleBar->setFixedWidth(this->width());
 #ifdef USE_BORDER
     ui->MainPicView->resize(QSize(event->size().width()-20, event->size().height()-20));
 #else

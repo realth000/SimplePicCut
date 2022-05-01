@@ -51,7 +51,6 @@ void PicGraphicsView::mouseReleaseEvent(QMouseEvent *event)
         if (selectedItem->flags() & QGraphicsItem::ItemIsMovable) {
             return;
         }
-
     }
 }
 
